@@ -11,6 +11,8 @@ public class Enemy1 : Enemies
     public string[] sentances;
     private int index;
     public float typingSpeed;
+    public GameObject[] haters;
+    
     //public GameObject text;
     
     // Start is called before the first frame update
@@ -46,6 +48,8 @@ public class Enemy1 : Enemies
         {
             Debug.Log("player detected");
             text1.gameObject.SetActive(true);
+            canvas.gameObject.SetActive(false);
+            //haters.
             
             //call next sentence when enter is pressed but only when it hits the raycast
             if (Input.GetKey(KeyCode.Return))

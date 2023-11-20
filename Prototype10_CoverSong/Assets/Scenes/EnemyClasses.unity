@@ -3082,11 +3082,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168fca92060de164f992e99c5d356b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionDistance: 10
+  detectionDistance: 1
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
-  canvas: {fileID: 0}
+    m_Bits: 8
+  canvas: {fileID: 1397176840}
   text2: {fileID: 621679603}
 --- !u!1 &378257431
 GameObject:
