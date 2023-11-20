@@ -40,7 +40,7 @@ public class Enemies : MonoBehaviour
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
             Debug.Log("player detected");
-            //enemyText1.gameObject.SetActive(true);
+            text.gameObject.SetActive(true);
             //canvas.gameObject.SetActive(false);
             //button.SetActive(true);
         }
