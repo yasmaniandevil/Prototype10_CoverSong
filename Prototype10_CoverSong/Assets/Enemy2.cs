@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Enemies : MonoBehaviour
+public class Enemy2 : Enemies
 {
+    public TextMeshProUGUI text2;
 
-    //public TextMeshProUGUI text;
-    public float detectionDistance = 10f;
-    public LayerMask playerLayer;
-    public Canvas canvas;
-
-
+    //public GameObject text;
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -40,10 +37,10 @@ public class Enemies : MonoBehaviour
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
             Debug.Log("player detected");
-            //text.gameObject.SetActive(true);
+            text2.gameObject.SetActive(true);
             //canvas.gameObject.SetActive(false);
             //button.SetActive(true);
+            
         }
-
     }
 }
