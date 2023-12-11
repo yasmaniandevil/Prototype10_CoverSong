@@ -49,7 +49,7 @@ public class Enemy1 : Enemies
         //when the raycast hits the player set text active to true
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
-            Debug.Log("player detected");
+            //Debug.Log("player detected");
             text1.gameObject.SetActive(true);
             //canvas.gameObject.SetActive(false);
             SetHatersInactive();

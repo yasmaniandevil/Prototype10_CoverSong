@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EnemyClasses.unity
     guid: 285f24eca2340ed40bcf8b160d41118f
+  - enabled: 1
+    path: Assets/Scenes/Pokemon.unity
+    guid: 58640460e9fb1a14abcbe4005f04ef8b
   m_configObjects: {}
