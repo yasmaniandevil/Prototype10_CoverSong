@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Fight : MonoBehaviour
 {
 
-    public GameObject panel;
+    [FormerlySerializedAs("panel")] public GameObject standardPanel;
+    public GameObject fightPanel;
     
     
     
@@ -24,6 +26,24 @@ public class Fight : MonoBehaviour
 
     public void SetActiveFight()
     {
-        panel.gameObject.SetActive(false);
+        standardPanel.SetActive(false);
+        fightPanel.SetActive(true);
+    }
+
+   
+    public void Leer()
+    {
+        
+    }
+
+    public void SmokeScreen()
+    {
+        
+    }
+
+    public void Return()
+    {
+        fightPanel.SetActive(false);
+        standardPanel.SetActive(true);
     }
 }
