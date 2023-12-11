@@ -21,4 +21,10 @@ public class Pokemon : MonoBehaviour
     {
         SceneManager.LoadScene("Pokemon");
     }
+
+    public void SelectPokemon(string pokemonName)
+    {
+        PlayerPrefs.SetString("SelectedPokemon", pokemonName);
+        SceneManager.LoadScene("BattleScene1");
+    }
 }

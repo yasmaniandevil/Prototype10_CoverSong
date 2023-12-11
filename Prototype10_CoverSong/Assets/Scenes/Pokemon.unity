@@ -2107,6 +2107,7 @@ GameObject:
   - component: {fileID: 1200640583}
   - component: {fileID: 1200640582}
   - component: {fileID: 1200640581}
+  - component: {fileID: 1200640584}
   m_Layer: 5
   m_Name: Alex
   m_TagString: Untagged
@@ -2178,7 +2179,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1200640582}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1200640584}
+        m_TargetAssemblyTypeName: Pokemon, Assembly-CSharp
+        m_MethodName: SelectPokemon
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Alex
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1200640582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2217,6 +2230,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200640579}
   m_CullTransparentMesh: 1
+--- !u!114 &1200640584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200640579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ff1779b07cb054097544a1abee1748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1243941135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,6 +2524,7 @@ GameObject:
   - component: {fileID: 1356953467}
   - component: {fileID: 1356953466}
   - component: {fileID: 1356953465}
+  - component: {fileID: 1356953468}
   m_Layer: 5
   m_Name: Blaer
   m_TagString: Untagged
@@ -2570,7 +2596,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1356953466}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1356953468}
+        m_TargetAssemblyTypeName: Pokemon, Assembly-CSharp
+        m_MethodName: SelectPokemon
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Blaer
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1356953466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2609,6 +2647,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356953463}
   m_CullTransparentMesh: 1
+--- !u!114 &1356953468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356953463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ff1779b07cb054097544a1abee1748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1586037365
 GameObject:
   m_ObjectHideFlags: 0

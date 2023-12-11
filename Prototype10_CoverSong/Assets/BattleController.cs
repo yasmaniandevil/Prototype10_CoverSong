@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleController : MonoBehaviour
 {
@@ -13,12 +14,19 @@ public class BattleController : MonoBehaviour
     private GameState currentState;
     public PlayerHealth playerHealth;
     public PlayerHealth enemyHealth;
+
+    public Pokemon currentPokemon;
+    public GameObject[] allPokemons;
     
     
     // Start is called before the first frame update
     void Start()
     {
+        
         currentState = GameState.PlayerTurn;
+        string selectedPokemon = PlayerPrefs.GetString("SelectedPokemon",
+            "DefaultPokemon");
+        SwitchToSelectedPokemon(selectedPokemon);
     }
 
     // Update is called once per frame
@@ -48,6 +56,7 @@ public class BattleController : MonoBehaviour
         {
             currentState = GameState.GameOver;
             Debug.Log("player Defeated");
+            SceneManager.LoadScene("EnemyClasses");
         }
         else
         {
@@ -70,10 +79,24 @@ public class BattleController : MonoBehaviour
             currentState = GameState.PlayerTurn;
         }
     }
-    
-    public void TailWhip()
-   {
-       
-   }
+
+    private void SwitchToSelectedPokemon(string pokemonName)
+    {
+        foreach (GameObject pokemonGameObject in allPokemons)
+        {
+            pokemonGameObject.SetActive(false);
+        }
+        
+
+        foreach (GameObject pokemonGameObject in allPokemons)
+        {
+            if (pokemonGameObject.name == pokemonName)
+            {
+                pokemonGameObject.SetActive(true);
+                //currentPokemon = pokemonGameObject.GetComponent<Pokemon>();
+                break;
+            }
+        }
+    }
 
 }
