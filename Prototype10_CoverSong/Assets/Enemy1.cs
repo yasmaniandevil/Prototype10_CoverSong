@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class Enemy1 : Enemies
@@ -18,6 +19,7 @@ public class Enemy1 : Enemies
     // Start is called before the first frame update
     void Start()
     {
+        //check to see if text1 equals true
         if (text1 == true)
         {
             StartCoroutine(Type());
@@ -48,8 +50,8 @@ public class Enemy1 : Enemies
         {
             Debug.Log("player detected");
             text1.gameObject.SetActive(true);
-            canvas.gameObject.SetActive(false);
-            //haters.
+            //canvas.gameObject.SetActive(false);
+            SetHatersInactive();
             
             //call next sentence when enter is pressed but only when it hits the raycast
             if (Input.GetKey(KeyCode.Return))
@@ -74,17 +76,46 @@ public class Enemy1 : Enemies
         //check to see if the index is less than the length of the array minus 1
         //if it is continue through the index
         
-        Debug.Log("E is pressed");
+        //check to see if theres another sentence in the array
+        //if(2 < the array length - 1) = 1
         if (index < sentances.Length - 1)
         {
+            //move to the next sentence and reset text
             index++;
             text1.text = "";
             StartCoroutine(Type());
+            Debug.Log("index:" + index);
         }
-        else
+        //last sentence in array
+        else if (index == sentances.Length - 1)
         {
+            StartCoroutine(Type());
+            index++;
+            Debug.Log("second index:" + index);
             text1.text = "";
         }
+        //once all sentences displayed go to battle
+        else
+        {
+            GoToBattle();
+            Debug.Log("Go to Battle");
+        }
         
+    }
+
+    public void GoToBattle()
+    {
+        SceneManager.LoadScene("BattleScene1");
+    }
+
+    public void SetHatersInactive()
+    {
+        foreach (var hater in haters)
+        {
+            if (hater != null)
+            {
+                hater.SetActive(false);
+            }
+        }
     }
 }
