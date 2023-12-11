@@ -13,6 +13,7 @@ public class Enemy1 : Enemies
     private int index;
     public float typingSpeed;
     public GameObject[] haters;
+    private bool isTyping = false;
     
     //public GameObject text;
     
@@ -63,15 +64,20 @@ public class Enemy1 : Enemies
 
     IEnumerator Type()
     {
+        isTyping = true;
         foreach (char letter in sentances[index].ToCharArray())
         {
             text1.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+
+        isTyping = false;
     }
 
     public void NextSentence()
     {
+        if(isTyping)
+            return;
         //if e is pressed
         //check to see if the index is less than the length of the array minus 1
         //if it is continue through the index
@@ -87,16 +93,18 @@ public class Enemy1 : Enemies
             Debug.Log("index:" + index);
         }
         //last sentence in array
-        else if (index == sentances.Length - 1)
+        else if (index == sentances.Length - 2)
         {
-            StartCoroutine(Type());
-            index++;
+            //index++;
             Debug.Log("second index:" + index);
             text1.text = "";
+            StartCoroutine(Type());
+            Debug.Log("Type");
         }
         //once all sentences displayed go to battle
         else
         {
+            index++;
             GoToBattle();
             Debug.Log("Go to Battle");
         }
